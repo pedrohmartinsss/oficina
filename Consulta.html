@@ -1,0 +1,118 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt-BR"> <!-- Início do documento HTML com a linguagem definida como português do Brasil -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para responsividade -->
+    <title>Consulta de Produtos</title> <!-- Título da página que aparece na aba do navegador -->
+    <link rel="icon" href="../Imagens/logo mecanica.png"> <!--Link para colocar imagem de logo do site-->
+    <link rel="stylesheet" href="../CSS/styles consulta.css"> <!-- Link para o arquivo CSS externo -->
+    <script src="../js/produtos.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Consulta de Produtos</h1> <!-- Título principal da página -->
+    </header>
+    <div class="container">
+        <div class="table-container">
+            <table id="tabelaProdutos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Categoria</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os produtos serão inseridos aqui via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal para visualização do produto -->
+        <div id="visualizarModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Detalhes do Produto</h2>
+                <div id="produtoInfo"></div>
+            </div>
+        </div>
+
+        <!-- Modal para edição do produto -->
+        <div id="editarModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Produto</h2>
+                <form id="editarForm">
+                    <div class="form-group">
+                        <label for="editCodigo">Código:</label>
+                        <input type="text" id="editCodigo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editNome">Nome:</label>
+                        <input type="text" id="editNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editTipo">Tipo:</label>
+                        <input type="text" id="editTipo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCategoria">Categoria:</label>
+                        <input type="text" id="editCategoria" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editQuantidade">Quantidade:</label>
+                        <input type="number" id="editQuantidade" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="editPreco">Preço:</label>
+                        <input type="number" id="editPreco" min="0" step="0.01">
+                    </div>
+                    <button type="submit" class="submit-button">Salvar Alterações</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal para confirmação de exclusão -->
+        <div id="excluirModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Confirmar Exclusão</h2>
+                <p>Tem certeza que deseja excluir este produto?</p>
+                <div id="excluirInfo"></div>
+                <button id="confirmarExclusao" class="delete-button">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="../HTML/Adicionar.html">
+            <button>
+                ⬅️
+                voltar
+            </button>
+        </a>
+        <a href="../HTML/Menu.html"> <!-- Link para a página inicial -->
+            <button> <!-- Botão de início -->
+                🏠 <!-- Ícone do botão de início e texto "Início" -->
+                Início <!-- Ícone do botão de início e texto "Início" -->
+            </button> <!-- Fim do botão de início -->
+        </a> <!-- Fim do link para a página inicial -->
+        <a href="../HTML/Adicionar.html">
+            <button type="submit"> <!-- Botão para adicionar produtos -->
+                📥 <!-- Ícone do botão e texto "Adicionar Produtos" -->
+                Adicionar Produtos <!-- Ícone do botão e texto "Adicionar Produtos" -->
+            </button> <!-- Fim do botão para adicionar produtos -->
+        </a>
+    </div>
+
+    <footer>Oficina Mecânica Ⓜ 2025</footer>
+</body>
+
+</html>

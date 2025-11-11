@@ -1,0 +1,121 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt-BR"> <!-- Início do documento HTML com a linguagem definida como português do Brasil -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para responsividade -->
+    <title>Usuários</title> <!-- Título da página que aparece na aba do navegador -->
+    <link rel="icon" href="../Imagens/logo mecanica.png"> <!--Link para colocar imagem de logo do site-->
+    <link rel="stylesheet" href="../CSS/styles usuario.css"> <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Usuários</h1> <!-- Título principal da página -->
+    </header>
+    <div class="container">
+        <div class="table-container">
+            <table id="tabelaUsuarios">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Login</th>
+                        <th>Celular</th>
+                        <th>Ativo</th>
+                        <th>Senha</th>
+                        <th>Acesso</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os usuários serão inseridos aqui via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal para visualização do usuário -->
+        <div id="visualizarModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Detalhes do Usuário</h2>
+                <div id="usuarioInfo"></div>
+            </div>
+        </div>
+
+        <!-- Modal para edição do usuário -->
+        <div id="editarModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Editar Usuário</h2>
+                <form id="editarForm">
+                    <div class="form-group">
+                        <label for="editNome">Nome:</label>
+                        <input type="text" id="editNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editLogin">Login:</label>
+                        <input type="text" id="editLogin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCelular">Celular:</label>
+                        <input type="text" id="editCelular" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAtivo">Ativo:</label>
+                        <select id="editAtivo" required>
+                            <option value="true">Sim</option>
+                            <option value="false">Não</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editSenha">Senha:</label>
+                        <input type="password" id="editSenha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editAcesso">Acesso:</label>
+                        <select id="editAcesso" required>
+                            <option value="admin">Administrador</option>
+                            <option value="user">Colaborador</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-button">Salvar Alterações</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal para confirmação de exclusão -->
+        <div id="excluirModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Confirmar Exclusão</h2>
+                <p>Tem certeza que deseja excluir este usuário?</p>
+                <div id="excluirInfo"></div>
+                <button id="confirmarExclusao" class="delete-button">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="Menu.html">
+            <button>
+                ⬅️
+                voltar
+            </button>
+        </a>
+        <a href="Cadastro usuario.html">
+            <button type="submit"> <!-- Botão para adicionar usuários -->
+                🚻 <!-- Ícone do botão e texto "Adicionar Usuário" -->
+                Adicionar Usuário <!-- Ícone do botão e texto "Adicionar Usuário" -->
+            </button> <!-- Fim do botão para adicionar usuários -->
+        </a>
+    </div>
+
+    <footer>Oficina Mecânica Ⓜ 2025</footer>
+
+    <!-- Scripts -->
+    <script src="../js/usuarios.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!doctype html> <!-- Declaração do tipo de documento, indicando que é um documento HTML5 -->
+<html lang="pt-BR"> <!-- Início do documento HTML -->
+
+<head> <!-- Início da seção de cabeçalho do documento -->
+    <title>Menu</title>
+    <link rel="icon" href="../Imagens/logo mecanica.png"> <!--Link para colocar imagem de logo do site-->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a visualização para dispositivos móveis -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style menu.css"> <!-- Linkando o CSS (comentado) -->
+</head> <!-- Fim da seção de cabeçalho -->
+
+<body> <!-- Início do corpo do documento -->
+    <header> <!-- Início do cabeçalho da página -->
+        <h1> Tela de consulta </h1> <!-- Título principal da página -->
+    </header> <!-- Fim do cabeçalho -->
+
+
+    <section> <!-- Início da seção principal do conteúdo -->
+        <!--<form action="#">--> <!-- Início do formulário (a ação é um placeholder) -->
+        <button id="btnMenu"> <!-- Botão de menu que envia o formulário -->
+            ☰ <!-- Ícone do botão de menu -->
+        </button> <!-- Fim do botão de menu -->
+
+        <nav id="menuLateral" class="menu">
+            <button id="btnFechar">✖ Fechar</button>
+
+            <a href="Menu.html">
+                <button>
+                    🏠 Início
+                </button>
+            </a>
+
+            <a href="Adicionar.html">
+                <button type="submit">
+                    📥 Adicionar Produtos
+                </button>
+            </a>
+
+            <a href="Usuários.html">
+                <button type="submit">
+                    🚻 Usuários
+                </button>
+            </a>
+
+            <a href="Notificação.html">
+                <button type="submit">
+                    🔔 Notificações
+                </button>
+            </a>
+
+            <!-- Divisor -->
+            <hr style="border-color: #555; margin: 10px 0;">
+
+            <!-- Navegação entre tabelas (apenas mobile) -->
+            <div class="menu-tabs-navegacao">
+                <button class="menu-tab-button active" data-tab="agenda">
+                    🗓️ Agenda
+                </button>
+                <button class="menu-tab-button" data-tab="servicos">
+                    🔧 Serviços
+                </button>
+                <button class="menu-tab-button" data-tab="concluidos">
+                    ✅ Concluídos
+                </button>
+            </div>
+
+            <!-- Divisor -->
+            <hr style="border-color: #555; margin: 10px 0;">
+
+            <a href="login.html" class="logout-button" onclick="limparLogin()">
+                <button onclick="limparLogin()">
+                    ↩️ Sair
+                </button>
+            </a>
+
+        </nav>
+
+        <input type="text" placeholder="Pesquisar" id="Filtro"> <!-- Campo de entrada para pesquisa -->
+        <a href="Notificação.html">
+            <button type="submit"> <!-- Botão de notificação que envia o formulário -->
+                Notificações 🔔 <!-- Ícone do botão de notificação -->
+            </button> <!-- Fim do botão de notificação -->
+        </a>
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalAgendamento">
+            Novo agendamento🆕
+        </button>
+        </form> <!-- Fim do formulário -->
+
+        <br> <!-- Quebra de linha -->
+        <br> <!-- Quebra de linha -->
+
+        <div class="container"> <!-- Início de um contêiner para manter as tabelas lado a lado -->
+            <table class="tabela tabela-mobile" id="tabelaAgendamento" data-tabela="agenda" border="0">
+                <!-- Início da tabela para a agenda -->
+                <thead> <!-- Início do cabeçalho da tabela -->
+                    <tr> <!-- Início da linha do cabeçalho -->
+                        <th colspan="9">
+                            <h3>🗓️ Agenda</h3>
+                        </th> <!-- Cabeçalho da tabela com título "Agenda" -->
+                    </tr> <!-- Fim da linha do cabeçalho -->
+                    <tr> <!-- Início da linha de cabeçalho das colunas -->
+                        <th>ID</th> <!-- Cabeçalho da coluna ID -->
+                        <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
+                        <th>Telefone</th> <!-- Cabeçalho da coluna Telefone -->
+                        <th>Serviço</th> <!-- Cabeçalho da coluna Serviço -->
+                        <th>Data</th> <!-- Cabeçalho da coluna Data -->
+                        <th>Hora</th> <!-- Cabeçalho da coluna Hora -->
+                        <th>Observações</th> <!-- Cabeçalho da coluna Observações -->
+                        <th>Status</th>
+                        <th>Ações</th> <!-- Cabeçalho da coluna Ações -->
+                    </tr> <!-- Fim da linha de cabeçalho das colunas -->
+                </thead> <!-- Fim do cabeçalho da tabela -->
+                <tbody> <!-- Início do corpo da tabela -->
+                </tbody> <!-- Fim do corpo da tabela -->
+            </table> <!-- Fim da tabela para a agenda -->
+
+            <!-- Modal Bootstrap -->
+            <div class="modal fade" id="modalAgendamento" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel">Inserir novo agendamento</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Fechar"></button>
+                        </div>
+
+                        <form id="formAgendamento">
+                            <div class="modal-body">
+
+                                <div class="mb-3">
+                                    <label class="form-label">Nome:</label>
+                                    <input class="form-text" name="name" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Telefone:</label>
+                                    <input class="form-number" name="telefone" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Serviço</label>
+                                    <select class="form-select" name="tipo" required>
+                                        <option value="">Selecione</option>
+                                        <option>Alinhamento/Balanceamento</option>
+                                        <option>Troca de suspensão</option>
+                                        <option>Revisão básica</option>
+                                        <option>Troca de pneu</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label class="form-label">Data:</label>
+                                    <input type="date" class="form-control" name="data" required>
+                                </div>
+
+
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label class="form-label">Hora</label>
+                                        <input type="time" class="form-control" name="hora">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Observações:</label>
+                                    <textarea class="form-control" name="obs"></textarea>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-success">Salvar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- Fim do modal Bootstrap -->
+
+        <br> <!-- Quebra de linha -->
+
+        <br> <!-- Quebra de linha -->
+        <div class="container">
+            <table class="tabela tabela-mobile" id="tabelaServicos" data-tabela="servicos" border="0">
+                <!-- Início da tabela para serviços em andamento -->
+                <thead> <!-- Início do cabeçalho da tabela -->
+                    <tr> <!-- Início da linha do cabeçalho -->
+                        <th colspan="5">
+                            <h3>🔧 Serviços em andamento</h3>
+                        </th> <!-- Cabeçalho da tabela com título "Serviços em andamento" -->
+                    </tr> <!-- Fim da linha do cabeçalho -->
+                    <tr> <!-- Início da linha de cabeçalho das colunas -->
+                        <th>ID</th> <!-- Cabeçalho da coluna ID -->
+                        <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
+                        <th>Telefone</th> <!-- Cabeçalho da coluna Telefone -->
+                        <th>Serviço</th> <!-- Cabeçalho da coluna Serviço -->
+                        <th>Status</th> <!-- Cabeçalho da coluna Status -->
+                    </tr>
+                </thead> <!-- Fim do cabeçalho da tabela -->
+                <tbody> <!-- Início do corpo da tabela -->
+                </tbody> <!-- Fim do corpo da tabela -->
+            </table> <!-- Fim da tabela para serviços em andamento -->
+        </div> <!-- Fim do contêiner para serviços em andamento -->
+
+        <br> <!-- Quebra de linha -->
+
+        <div class="container">
+            <table class="tabela tabela-mobile" id="tabelaConcluidos" data-tabela="concluidos" border="0">
+                <!-- Início da tabela para serviços em andamento -->
+                <thead> <!-- Início do cabeçalho da tabela -->
+                    <tr> <!-- Início da linha do cabeçalho -->
+                        <th colspan="6">
+                            <h3>✅ Serviços concluídos</h3>
+                        </th> <!-- Cabeçalho da tabela com título "Serviços em andamento" -->
+                    </tr> <!-- Fim da linha do cabeçalho -->
+                    <tr> <!-- Início da linha de cabeçalho das colunas -->
+                        <th>ID</th> <!-- Cabeçalho da coluna ID -->
+                        <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
+                        <th>Telefone</th> <!-- Cabeçalho da coluna Telefone -->
+                        <th>Serviço</th> <!-- Cabeçalho da coluna Serviço -->
+                        <th>Status</th> <!-- Cabeçalho da coluna Status -->
+                        <th>Ações</th> <!-- Cabeçalho da coluna Ações -->
+                    </tr>
+                </thead> <!-- Fim do cabeçalho da tabela -->
+                <tbody> <!-- Início do corpo da tabela -->
+                </tbody> <!-- Fim do corpo da tabela -->
+            </table> <!-- Fim da tabela para serviços em andamento -->
+        </div> <!-- Fim do contêiner para serviços em andamento -->
+
+        <br> <!-- Quebra de linha -->
+        <br> <!-- Quebra de linha -->
+        <br> <!-- Quebra de linha -->
+
+
+        <div class="menu-buttons" style="display: none;"> <!-- Contêiner para os botões de navegação - OCULTO -->
+            <a href="login.html"> <!-- Link para a página de login -->
+                <button onclick="limparLogin()" class="logout-button" <i class="fas fa-sign-out-alt"></i>
+                    ↩️
+                    <br>
+                    Sair
+                </button>
+            </a> <!-- Fim do link para a página de login -->
+
+            <a href="Menu.html"> <!-- Link para a página inicial -->
+                <button> <!-- Botão de início -->
+                    🏠
+                    <br>
+                    Início <!-- Ícone do botão de início e texto "Início" -->
+                </button> <!-- Fim do botão de início -->
+            </a> <!-- Fim do link para a página inicial -->
+
+            <a href="Adicionar.html">
+                <button type="submit"> <!-- Botão para adicionar produtos -->
+                    📥
+                    <br>
+                    Adicionar Produtos <!-- Ícone do botão e texto "Adicionar Produtos" -->
+                </button> <!-- Fim do botão para adicionar produtos -->
+            </a>
+
+            <a href="Usuários.html">
+                <button type="submit"> <!-- Botão para adicionar produtos -->
+                    🚻
+                    <br>
+                    Usuários <!-- Ícone do botão e texto "Adicionar Produtos" -->
+                </button> <!-- Fim do botão para adicionar produtos -->
+            </a>
+        </div>
+
+
+    </section> <!-- Fim da seção principal do conteúdo -->
+
+    <footer>Oficina Mecânica Ⓜ 2025</footer>
+
+    <script src="../js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body> <!-- Fim do corpo do documento -->
+
+</html> <!-- Fim do documento HTML -->

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="icon" href="../Imagens/logo mecanica.png">
+    <link rel="stylesheet" href="../CSS/styles cadastro usuario.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro de Usuário</h1>
+    </header>
+
+    <div class="container">
+        <form id="cadastroForm" class="cadastro-form">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login" required>
+            </div>
+
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmarSenha">Confirmar Senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="acesso">Nível de Acesso:</label>
+                <select id="acesso" name="acesso" required>
+                    <option value="">Selecione o nível de acesso</option>
+                    <option value="admin">Administrador</option>
+                    <option value="user">Usuário</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ativo">Status:</label>
+                <select id="ativo" name="ativo" required>
+                    <option value="true">Ativo</option>
+                    <option value="false">Inativo</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="submit-button">Cadastrar</button>
+                <button type="reset" class="reset-button">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="bottom-nav">
+        <a href="Usuários.html">
+            <button>
+                ⬅️
+                voltar
+            </button>
+        </a>
+        <a href="Menu.html">
+            <button>
+                🏠
+                Início
+            </button>
+        </a>
+    </div>
+
+    <footer>Oficina Mecânica Ⓜ 2025</footer>
+
+    <!-- Scripts -->
+    <script src="../js/cadastro usuario.js" defer></script>
+</body>
+
+</html>

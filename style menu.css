@@ -1,0 +1,341 @@
+/* Reset básico para margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    /* Fonte padrão */
+    background-color: #f4f4f4;
+    /* Cor de fundo */
+    color: #333;
+    /* Cor do texto */
+    line-height: 1.6;
+    /* Espaçamento entre linhas */
+}
+
+input[type="text"] {
+    padding: 10px;
+    /* Adiciona preenchimento interno ao campo de entrada */
+    margin: 10px 0;
+    /* Adiciona margem vertical ao campo de entrada */
+    border: 1px solid #ccc;
+    /* Define a borda do campo de entrada */
+    border-radius: 4px;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background: #a52a2a;
+    /* Cor de fundo do cabeçalho */
+    color: white;
+    /* Cor do texto do cabeçalho */
+    padding: 10px 20px;
+    /* Preenchimento do cabeçalho */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+/* Estilo da seção */
+section {
+    padding: 20px;
+    /* Preenchimento da seção */
+}
+
+#menuLateral {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* escondido */
+    width: 250px;
+    height: 100vh;
+    background: #1e1e1e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: left .4s ease;
+    z-index: 1000;
+}
+
+#menuLateral.ativo {
+    left: 0;
+}
+
+#menuLateral a {
+    text-decoration: none;
+    width: 100%;
+}
+
+#menuLateral a button,
+#menuLateral button {
+    color: white;
+    background: #333;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#menuLateral a button:hover,
+#menuLateral button:hover {
+    background: #444;
+}
+
+#btnFechar {
+    background: #a52a2a !important;
+}
+
+#btnFechar:hover {
+    background: #8b2323 !important;
+}
+
+#btnMenu {
+    margin: 10px;
+    font-size: 18px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Estilo das tabelas */
+.tabela {
+    width: 100%;
+    /* Largura total */
+    border-collapse: collapse;
+    /* Remove espaços entre as células */
+    margin-bottom: 20px;
+    /* Espaçamento inferior */
+}
+
+.tabela th,
+.tabela td {
+    border: 0.5px solid #ddd;
+    /* Borda das células */
+    border-radius: 10px;
+    padding: 8px;
+    /* Preenchimento das células */
+    text-align: left;
+    /* Alinhamento do texto */
+}
+
+.tabela th {
+    background-color: #a52a2a;
+    /* Cor de fundo dos cabeçalhos */
+    color: white;
+    /* Cor do texto dos cabeçalhos */
+}
+
+.modal-body {
+    background-color: #f5f5f5;
+    /* Cor de fundo do corpo do modal */
+}
+
+.modal-body input {
+    width: 100%;
+    /* Largura total do campo de entrada */
+    padding: 10px;
+    /* Preenchimento do campo de entrada */
+    margin: 10px 0;
+    /* Margem vertical do campo de entrada */
+    border: 1px solid #ccc;
+    /* Borda do campo de entrada */
+    border-radius: 4px;
+}
+
+.menu-buttons {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo dos botões */
+button {
+    background-color: #a52a2a;
+    /* Cor de fundo dos botões */
+    color: #ffffff;
+    /* Cor do texto dos botões */
+    border: none;
+    /* Remove bordas */
+    padding: 10px 15px;
+    /* Preenchimento dos botões */
+    margin: 5px;
+    /* Margem entre os botões */
+    cursor: pointer;
+    /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    transition: background-color 0.3s;
+    /* Transição suave para a cor de fundo */
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo dos links */
+a {
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+}
+
+/* Estilo do container das tabelas */
+.container {
+    display: flex;
+    /* Mantém as tabelas lado a lado */
+    gap: 20px;
+    /* Espaçamento entre as tabelas */
+}
+
+/* Estilo do botão de logout */
+.logout {
+    background-color: #a52a2a;
+    /* Cor de fundo do botão de logout */
+}
+
+.logout:hover {
+    background-color: #0056b3;
+    /* Cor de fundo ao passar o mouse no botão de logout */
+}
+
+footer {
+    background-color: #a52a2a;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Navegação por tabs no menu lateral - oculta em telas grandes */
+.menu-tabs-navegacao {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-tab-button {
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    text-align: left;
+    width: 100%;
+}
+
+.menu-tab-button:hover {
+    background-color: #444;
+}
+
+.menu-tab-button.active {
+    background-color: #a52a2a;
+    border-color: #a52a2a;
+}
+
+/* Media Queries para dispositivos móveis e tablets */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        /* Adiciona um pouco de preenchimento nas laterais */
+    }
+
+    header {
+        padding: 15px;
+        /* Aumenta o preenchimento do cabeçalho para melhor visualização */
+    }
+
+    section {
+        padding: 10px;
+        /* Reduz o preenchimento da seção */
+    }
+
+    .container {
+        flex-direction: column;
+        /* Alinha as tabelas em coluna em vez de lado a lado */
+        gap: 10px;
+        /* Reduz o espaço entre as tabelas */
+    }
+
+    button {
+        width: 100%;
+        /* Faz os botões ocuparem toda a largura disponível */
+        margin: 5px 0;
+        /* Ajusta a margem para melhor espaçamento vertical */
+    }
+
+    footer {
+        font-size: 20px;
+        /* Reduz o tamanho da fonte do texto do rodapé */
+        left: 5px;
+        /* Ajusta a posição do texto do rodapé */
+        position: relative;
+    }
+
+    /* Mostrar tabs de navegação no menu lateral apenas em mobile */
+    .menu-tabs-navegacao {
+        display: flex;
+    }
+
+    /* Esconder todas as tabelas em mobile por padrão */
+    .tabela-mobile {
+        display: none !important;
+    }
+
+    .tabela-mobile.active {
+        display: table !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+        /* Reduz o tamanho do título para telas menores */
+    }
+
+    .tabela th,
+    .tabela td {
+        padding: 6px;
+        /* Reduz o preenchimento das células para melhor adaptação */
+    }
+
+    .menu-buttons {
+        gap: 10px;
+        /* Espaçamento entre os botões */
+    }
+
+    button {
+        font-size: 10px;
+        /* Reduz o tamanho da fonte dos botões */
+    }
+
+    input {
+        width: 100%;
+        /* Faz o campo de entrada ocupar toda a largura disponível */
+        padding: 10px;
+        /* Ajusta o preenchimento do campo de entrada */
+    }
+
+    footer {
+        font-size: 20px;
+        /* Reduz o tamanho da fonte do texto do rodapé */
+        left: 5px;
+        /* Ajusta a posição do texto do rodapé */
+        position: relative;
+    }
+}

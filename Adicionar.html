@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="icon" href="../Imagens/logo mecanica.png"> <!--Link para colocar imagem de logo do site-->
+    <link rel="stylesheet" href="../CSS/styles adicionar.css"> <!-- Link de conexão com o código CSS -->
+</head>
+
+<body>
+    <header>
+        <h1>Informações do Produto</h1>
+    </header>
+
+    <div class="container">
+        <form id="produtoForm">
+            <input type="text" id="codigo" placeholder="Código" required>
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="text" id="tipo" placeholder="Tipo de Produto" required>
+            <input type="text" id="categoria" placeholder="Categoria" required>
+            <input type="number" id="quantidade" placeholder="Quantidade" min="0" required>
+            <input type="number" id="preco" placeholder="Preço" min="0" step="0.01" required>
+
+            <button type="submit" class="add-product">Adicionar produto</button>
+        </form>
+    </div>
+
+    <!-- Pop-up de sucesso -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <h3>✅ Sucesso!</h3>
+            <p>Produto adicionado com sucesso!</p>
+        </div>
+        <button class="popup-button" onclick="fecharPopup()">OK</button>
+    </div>
+
+    <!-- Overlay para o pop-up -->
+    <div id="overlay" class="overlay"></div>
+
+    <div class="bottom-nav">
+        <a href="Menu.html"> <!-- Link para a página inicial -->
+            <button> <!-- Botão de início -->
+                🏠 <!-- Ícone do botão de início e texto "Início" -->
+                <br>
+                Início <!-- Ícone do botão de início e texto "Início" -->
+            </button> <!-- Fim do botão de início -->
+        </a> <!-- Fim do link para a página inicial -->
+        <a href="Consulta.html"> <!-- Link para a página de consulta -->
+            <button> <!-- Botão de consulta -->
+                🔎 <!-- Ícone do botão de consulta e texto "Consulta" -->
+                <br>
+                Consultar produtos <!-- Ícone do botão de consulta e texto "Consulta" -->
+            </button> <!-- Fim do botão de consulta -->
+        </a>
+    </div>
+
+    <footer>Oficina Mecânica Ⓜ 2025</footer>
+
+    <!-- Scripts -->
+    <script src="../js/adicionar.js"></script>
+</body>
+
+</html>

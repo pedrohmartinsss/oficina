@@ -1,0 +1,57 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a visualização para dispositivos móveis -->
+    <title>Login - Oficina Mecânica</title> <!-- Título da página que aparece na aba do navegador -->
+    <link rel="icon" href="../Imagens/logo mecanica.png"> <!--Link para colocar imagem de logo do site-->
+    <link rel="stylesheet" href="../CSS/styles login.css"> <!-- Link de conexão com o arquivo CSS (comentado) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="logo-container">
+
+                <img src="../Imagens/logo mecanica.png" alt="Logo Oficina Mecânica" class="logo">
+                <h1>Oficina Mecânica</h1>
+            </div>
+
+            <form id="formLogin" class="login-form">
+                <div class="form-group">
+                    <label for="login">Login:</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="login" name="login" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="senha" name="senha" required>
+                        <button type="button" class="toggle-senha" title="Mostrar/Ocultar senha">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-button">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Entrar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>Oficina Mecânica Ⓜ 2025</footer>
+
+    <!-- Scripts -->
+    <script src="../js/login.js" defer></script>
+</body>
+
+</html>
