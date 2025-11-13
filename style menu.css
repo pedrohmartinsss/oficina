@@ -109,6 +109,7 @@ section {
     /* Largura total */
     border-collapse: collapse;
     /* Remove espaços entre as células */
+    overflow-x: auto;
     margin-bottom: 20px;
     /* Espaçamento inferior */
 }
@@ -270,7 +271,17 @@ footer {
         /* Alinha as tabelas em coluna em vez de lado a lado */
         gap: 10px;
         /* Reduz o espaço entre as tabelas */
+        width: 100%;
+        /* Faz as tabelas ocuparem toda a largura disponível */
+        overflow-x: auto;
     }
+
+    .tabela {
+        width: 100%;
+        /* Faz as tabelas ocuparem toda a largura disponível */
+        overflow-x: auto;
+    }
+
 
     button {
         width: 100%;
