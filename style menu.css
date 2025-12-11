@@ -209,6 +209,56 @@ a {
     /* Cor de fundo ao passar o mouse no botão de logout */
 }
 
+/* Filtros (pesquisa + datas) alinhados ao estilo da página */
+.filtros-acao {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    /* força uma linha única */
+    white-space: nowrap;
+    overflow-x: auto;
+    /* permite scroll horizontal em telas pequenas */
+    margin: 10px 0;
+}
+
+/* Barra superior com o botão de menu, filtros e novo agendamento alinhados */
+.topbar {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    vertical-align: middle;
+}
+
+#btnMenu {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.filtro-label {
+    font-weight: 600;
+    background-color: #a52a2a;
+    color: #ffffff;
+    /* Cor do texto dos botões */
+    border: none;
+    /* Remove bordas */
+    padding: 10px 15px;
+    /* Preenchimento dos botões */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+}
+
+.filtro-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.menu-buttons.hidden {
+    display: none;
+}
+
 footer {
     background-color: #a52a2a;
     color: white;
@@ -266,6 +316,28 @@ footer {
         /* Reduz o preenchimento da seção */
     }
 
+    .topbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .filtros-acao {
+        flex-direction: column;
+        width: 100%;
+        white-space: normal;
+        overflow-x: visible;
+    }
+
+    .filtros-acao>* {
+        width: 100%;
+    }
+
+    .btn.btn-primary.mb-3 {
+        width: 100%;
+    }
+
     .container {
         flex-direction: column;
         /* Alinha as tabelas em coluna em vez de lado a lado */
@@ -319,6 +391,28 @@ footer {
         /* Reduz o tamanho do título para telas menores */
     }
 
+    .topbar {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .filtros-acao {
+        flex-direction: column;
+        width: 100%;
+        white-space: normal;
+        overflow-x: visible;
+    }
+
+    .filtros-acao>* {
+        width: 100%;
+    }
+
+    .btn.btn-primary.mb-3 {
+        width: 100%;
+    }
+
     .tabela th,
     .tabela td {
         padding: 6px;
@@ -348,5 +442,11 @@ footer {
         left: 5px;
         /* Ajusta a posição do texto do rodapé */
         position: relative;
+    }
+}
+
+@media (max-width: 2000px) {
+    footer {
+        position: fixed;
     }
 }
