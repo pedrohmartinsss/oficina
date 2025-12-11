@@ -23,6 +23,28 @@
             ☰ <!-- Ícone do botão de menu -->
         </button> <!-- Fim do botão de menu -->
 
+        <div class="topbar">
+            <div class="filtros-acao">
+                <input type="text" placeholder="Pesquisar" id="Filtro"> <!-- Campo de entrada para pesquisa -->
+
+                <label for="filtroDataInicio" class="filtro-label">Data início</label>
+                <input type="date" id="filtroDataInicio" class="filtro-input">
+
+                <label for="filtroDataFim" class="filtro-label">Data fim</label>
+                <input type="date" id="filtroDataFim" class="filtro-input">
+
+                <button type="button" id="limparFiltros" onclick="limparFiltros()">Limpar filtros</button>
+
+                <button type="button" onclick="exportarExcel()">
+                    Exportar relatório 📋
+                </button>
+            </div>
+
+            <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalAgendamento">
+                Novo agendamento🆕
+            </button>
+        </div>
+
         <nav id="menuLateral" class="menu">
             <button id="btnFechar">✖ Fechar</button>
 
@@ -61,8 +83,8 @@
                 <button class="menu-tab-button" data-tab="servicos">
                     🔧 Serviços
                 </button>
-                <button class="menu-tab-button" data-tab="concluidos">
-                    ✅ Concluídos
+                <button class="menu-tab-button" data-tab="entregues">
+                    ✅ A serem entregues
                 </button>
             </div>
 
@@ -77,15 +99,6 @@
 
         </nav>
 
-        <input type="text" placeholder="Pesquisar" id="Filtro"> <!-- Campo de entrada para pesquisa -->
-        <a href="Notificação.html">
-            <button type="submit"> <!-- Botão de notificação que envia o formulário -->
-                Notificações 🔔 <!-- Ícone do botão de notificação -->
-            </button> <!-- Fim do botão de notificação -->
-        </a>
-        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalAgendamento">
-            Novo agendamento🆕
-        </button>
         </form> <!-- Fim do formulário -->
 
         <br> <!-- Quebra de linha -->
@@ -209,13 +222,13 @@
         <br> <!-- Quebra de linha -->
 
         <div class="container">
-            <table class="tabela tabela-mobile" id="tabelaConcluidos" data-tabela="concluidos" border="0">
-                <!-- Início da tabela para serviços em andamento -->
+            <table class="tabela tabela-mobile" id="tabelaEntregues" data-tabela="entregues" border="0">
+                <!-- Início da tabela para serviços a serem entregues -->
                 <thead> <!-- Início do cabeçalho da tabela -->
                     <tr> <!-- Início da linha do cabeçalho -->
                         <th colspan="6">
-                            <h3>✅ Serviços concluídos</h3>
-                        </th> <!-- Cabeçalho da tabela com título "Serviços em andamento" -->
+                            <h3>✅ Serviços a serem entregues</h3>
+                        </th> <!-- Cabeçalho da tabela com título "Serviços a serem entregues" -->
                     </tr> <!-- Fim da linha do cabeçalho -->
                     <tr> <!-- Início da linha de cabeçalho das colunas -->
                         <th>ID</th> <!-- Cabeçalho da coluna ID -->
@@ -228,15 +241,15 @@
                 </thead> <!-- Fim do cabeçalho da tabela -->
                 <tbody> <!-- Início do corpo da tabela -->
                 </tbody> <!-- Fim do corpo da tabela -->
-            </table> <!-- Fim da tabela para serviços em andamento -->
-        </div> <!-- Fim do contêiner para serviços em andamento -->
+            </table> <!-- Fim da tabela para a serem entregues -->
+        </div> <!-- Fim do contêiner para a serem entregues -->
 
         <br> <!-- Quebra de linha -->
         <br> <!-- Quebra de linha -->
         <br> <!-- Quebra de linha -->
 
 
-        <div class="menu-buttons" style="display: none;"> <!-- Contêiner para os botões de navegação - OCULTO -->
+        <div class="menu-buttons hidden"> <!-- Contêiner para os botões de navegação - OCULTO -->
             <a href="login.html"> <!-- Link para a página de login -->
                 <button onclick="limparLogin()" class="logout-button" <i class="fas fa-sign-out-alt"></i>
                     ↩️
@@ -277,9 +290,12 @@
 
     <script src="menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 
 </body> <!-- Fim do corpo do documento -->
 
+</html> <!-- Fim do documento HTML -->
 
 </html> <!-- Fim do documento HTML -->
+
