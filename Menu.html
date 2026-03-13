@@ -66,9 +66,6 @@
                 </button>
             </a>
 
-            <!-- Divisor -->
-            <hr style="border-color: #555; margin: 10px 0;">
-
             <!-- Navegação entre tabelas (apenas mobile) -->
             <div class="menu-tabs-navegacao">
                 <button class="menu-tab-button active" data-tab="agenda">
@@ -81,9 +78,6 @@
                     ✅ A serem entregues
                 </button>
             </div>
-
-            <!-- Divisor -->
-            <hr style="border-color: #555; margin: 10px 0;">
 
             <a href="login.html" class="logout-button" onclick="limparLogin()">
                 <button onclick="limparLogin()">
@@ -103,7 +97,7 @@
                 <!-- Início da tabela para a agenda -->
                 <thead> <!-- Início do cabeçalho da tabela -->
                     <tr> <!-- Início da linha do cabeçalho -->
-                        <th colspan="9">
+                        <th colspan="11">
                             <h3>🗓️ Agenda</h3>
                         </th> <!-- Cabeçalho da tabela com título "Agenda" -->
                     </tr> <!-- Fim da linha do cabeçalho -->
@@ -112,10 +106,11 @@
                         <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
                         <th>Telefone</th> <!-- Cabeçalho da coluna Telefone -->
                         <th>Serviço</th> <!-- Cabeçalho da coluna Serviço -->
+                        <th>Modelo Carro</th> <!-- Cabeçalho da coluna Modelo Carro -->
                         <th>Data</th> <!-- Cabeçalho da coluna Data -->
                         <th>Hora</th> <!-- Cabeçalho da coluna Hora -->
                         <th>Observações</th> <!-- Cabeçalho da coluna Observações -->
-                        <th>Status</th>
+                        <th>Status</th> <!-- Cabeçalho da coluna Status -->
                         <th>Ações</th> <!-- Cabeçalho da coluna Ações -->
                     </tr> <!-- Fim da linha de cabeçalho das colunas -->
                 </thead> <!-- Fim do cabeçalho da tabela -->
@@ -157,6 +152,11 @@
                                     </select>
                                 </div>
 
+                                <div class="mb-3">
+                                    <label class="form-label">Modelo Carro:</label>
+                                    <input class="form-text" name="modelo" required>
+                                </div>
+
 
                                 <div class="mb-3">
                                     <label class="form-label">Data:</label>
@@ -196,7 +196,7 @@
                 <!-- Início da tabela para serviços em andamento -->
                 <thead> <!-- Início do cabeçalho da tabela -->
                     <tr> <!-- Início da linha do cabeçalho -->
-                        <th colspan="5">
+                        <th colspan="8">
                             <h3>🔧 Serviços em andamento</h3>
                         </th> <!-- Cabeçalho da tabela com título "Serviços em andamento" -->
                     </tr> <!-- Fim da linha do cabeçalho -->
@@ -205,6 +205,9 @@
                         <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
                         <th>Telefone</th> <!-- Cabeçalho da coluna Telefone -->
                         <th>Serviço</th> <!-- Cabeçalho da coluna Serviço -->
+                        <th>Modelo Carro</th> <!-- Cabeçalho da coluna Modelo Carro -->
+                        <th>Data</th> <!-- Cabeçalho da coluna Data -->
+                        <th>Observações</th><!-- Cabeçalho da coluna Observação -->
                         <th>Status</th> <!-- Cabeçalho da coluna Status -->
                     </tr>
                 </thead> <!-- Fim do cabeçalho da tabela -->
@@ -220,7 +223,7 @@
                 <!-- Início da tabela para serviços a serem entregues -->
                 <thead> <!-- Início do cabeçalho da tabela -->
                     <tr> <!-- Início da linha do cabeçalho -->
-                        <th colspan="6">
+                        <th colspan="9">
                             <h3>✅ Serviços a serem entregues</h3>
                         </th> <!-- Cabeçalho da tabela com título "Serviços a serem entregues" -->
                     </tr> <!-- Fim da linha do cabeçalho -->
@@ -229,6 +232,9 @@
                         <th>Nome</th> <!-- Cabeçalho da coluna Nome -->
                         <th>Telefone</th> <!-- Cabeçalho da coluna Telefone -->
                         <th>Serviço</th> <!-- Cabeçalho da coluna Serviço -->
+                        <th>Modelo Carro</th> <!-- Cabeçalho da coluna Modelo Carro -->
+                        <th>Data</th> <!-- Cabeçalho da coluna Data -->
+                        <th>Observações</th><!-- Cabeçalho da coluna Observação -->
                         <th>Status</th> <!-- Cabeçalho da coluna Status -->
                         <th>Ações</th> <!-- Cabeçalho da coluna Ações -->
                     </tr>
@@ -280,7 +286,5 @@
 
 
 </body> <!-- Fim do corpo do documento -->
-
-</html> <!-- Fim do documento HTML -->
 
 </html> <!-- Fim do documento HTML -->
