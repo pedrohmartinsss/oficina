@@ -451,8 +451,6 @@ function exportarExcel() {
         Hora: item.hora,
         Observações: item.obs,
         Status: item.status,
-        Valor: item.valorServico ? `R$ ${item.valorServico.toFixed(2)}` : "N/A",
-        DataConclusão: item.dataConclusao ? formatarDataBR(item.dataConclusao) : "N/A" // opcional: data de conclusão
     }));
 
     // Criar planilha
@@ -463,4 +461,5 @@ function exportarExcel() {
     // Baixar arquivo
     XLSX.writeFile(workbook, "relatorio_entregues_cancelados.xlsx"); // gera e baixa o arquivo
 }
+
 
